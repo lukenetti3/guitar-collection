@@ -17,9 +17,13 @@ function SingleGuitar(props) {
             <p>Brand: {thisGuitar.brand}</p>
             <p>Year Made: {thisGuitar.year}</p>
         </div>
-          <div className="single-box">
-            <img src={thisGuitar.img !== undefined ? thisGuitar.img : null} alt='' />
-        </div>
+            
+            {thisGuitar.img.startsWith("http") ?
+            <div className="single-box">
+            {console.log(thisGuitar.img) }
+              <img src={thisGuitar.img} alt='' />
+            </div> :
+            null}
       </div>
     </div>
   )
