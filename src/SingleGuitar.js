@@ -1,18 +1,26 @@
 import React from "react"
 import { useParams } from "react-router-dom"
-import guitarData from "./guitarData"
 
-function SingleGuitar() {
+function SingleGuitar(props) {
+  const { guitarId } = useParams()
 
-  const {guitarId } = useParams()
+  const thisGuitar = props.data.find((item) => item.id === guitarId)
 
-  const thisGuitar = guitarData.find(item => (item.id === guitarId))
-
-  return(
+  return (
     <div>
-      <h1>Guitar: {thisGuitar.name}</h1>
-      <p>Brand: {thisGuitar.brand}</p>
-      <p>Year Made: {thisGuitar.year}</p>
+      <h1 style={{textAlign: "center"}}>
+        {thisGuitar.brand} {thisGuitar.name}
+      </h1>
+      <div className='single-container'>
+        <div className='single-box'>
+            <p>Guitar: {thisGuitar.name}</p>
+            <p>Brand: {thisGuitar.brand}</p>
+            <p>Year Made: {thisGuitar.year}</p>
+        </div>
+          <div className="single-box">
+            <img src={thisGuitar.img !== undefined ? thisGuitar.img : null} alt='' />
+        </div>
+      </div>
     </div>
   )
 }
