@@ -11,7 +11,7 @@ function Home() {
       </p>
       <img
         id='home-img'
-        src='https://vintageandrareguitars.com/wp-content/uploads/2017/03/VnR-99.jpg'
+        src='https://guitar.com/wp-content/uploads/2018/06/29_08-13.jpg'
         alt=''
       />
       <div>
